@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Movies from "./components/Movies";
 import People from "./components/People";
 import { Component } from "react";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 class App extends Component {
  constructor(){
@@ -17,6 +18,7 @@ class App extends Component {
   return (
     <div>
       <Nav />
+      <BrowserRouter>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -31,6 +33,7 @@ class App extends Component {
       <Route path="/Locations">
           <People />
         </Route>
+        </BrowserRouter>
     </div>
   );
   }
