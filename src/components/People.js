@@ -41,7 +41,7 @@ export default class People extends Component {
 			return (
 				<div>
 					<div className="ghi">
-						<div onClick={() => this.props.updateVideoObject(ghi)}>
+						<div onClick={() => this.props.updateGhibli(ghi)}>
 							
 						</div>
 					</div>

@@ -1,6 +1,4 @@
 import React, {Component} from "react";
-import ReactDom from "react-dom";
-import {Route, withRouter} from "react-router-dom";
 
 class MovieSearch extends Component{
 	constructor(){
@@ -31,4 +29,3 @@ class MovieSearch extends Component{
 }
 
 export default MovieSearch;
-ReactDOM.render(<MovieSearch />, document.getElementById('ghibli-search'));
