@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./Home.css";
+import {withRouter} from 'react-router';
 
-export default class Home extends Component {
+class Home extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -16,3 +17,5 @@ render() {
 	</div>)
 }
 }
+
+export default withRouter(Home);

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./Locations.css";
+import {withRouter} from 'react-router';
 
-export default class Locations extends Component {
+class Locations extends Component {
 	constructor() {
 		super();
 
@@ -81,3 +82,5 @@ export default class Locations extends Component {
 			);
 	}
 }
+
+export default withRouter(Locations);

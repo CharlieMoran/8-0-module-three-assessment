@@ -1,6 +1,7 @@
 import React, {Component} from "react";
+import {withRouter} from 'react-router';
 
-export default class Movies extends Component {
+class Movies extends Component {
 	constructor(){
 		super();
 		this.state= {
@@ -21,3 +22,5 @@ export default class Movies extends Component {
 		)
 	}
 }
+
+export default withRouter(Movies);

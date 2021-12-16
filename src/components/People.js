@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./Home.css";
+import "./People.css";
+import {withRouter} from 'react-router';
 
-export default class People extends Component {
+class People extends Component {
 	constructor() {
 		super();
 
@@ -52,7 +53,7 @@ export default class People extends Component {
 		return (
 			<div>
 				<h1 className="people-text" id="people-text">Search for a Person</h1>
-				<div className="search" id="search">
+				<div className="center" id="center">
 					<form onSubmit={this.fetchGhibli} className="search" id="search">
 						<span className="search" id="search">
 							<input
@@ -86,3 +87,5 @@ export default class People extends Component {
 		);
 	}
 }
+
+export default withRouter(People);
