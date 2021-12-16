@@ -43,7 +43,7 @@ export default class Locations extends Component {
 		  });
 		  locations.style.display = "none";
 		  return (
-			console.log("🍌"),
+			console.log("🐶"),
 			(
 			  <div
 				id="locations"
