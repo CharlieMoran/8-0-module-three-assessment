@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./People.css";
 import {withRouter} from 'react-router';
+import "./People.css";
 
 class People extends Component {
 	constructor() {

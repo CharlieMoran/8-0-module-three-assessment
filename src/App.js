@@ -1,20 +1,13 @@
 import "./App.css";
+import { BrowserRouter, Switch, Route} from "react-router-dom";
+import { Component } from "react";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
-import { BrowserRouter, Switch, Route} from "react-router-dom";
 import Movies from "./components/Movies";
 import People from "./components/People";
 import Locations from "./components/Locations";
-import { Component } from "react";
-
 
 class App extends Component {
- constructor(){
-   super()
-   this.state={
-     
-   }
- }
   render(){
   return (
     <div>

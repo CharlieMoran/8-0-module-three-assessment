@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Locations.css";
 import {withRouter} from 'react-router';
+import "./Locations.css";
 
 class Locations extends Component {
 	constructor() {

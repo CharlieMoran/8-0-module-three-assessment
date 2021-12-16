@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Home.css";
 import {withRouter} from 'react-router';
+import "./Home.css";
 
 class Home extends Component {
 	constructor() {
