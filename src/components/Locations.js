@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Locations.css";
-import { Link } from "react-router-dom";
 
 export default class Locations extends Component {
 	constructor() {
@@ -30,65 +29,52 @@ export default class Locations extends Component {
 			})
 			.then((data) => {
 				this.setState({
-					fetchdata: data.items,
+					fetchdata: data.locations,
 					searchValue: "",
 					toggle: false,
 				});
 			});
 	};
+	
+	hide = () => {
+		if (locations.style.display === "block") {
+		  this.setState({
+			hide: "on",
+		  });
+		  locations.style.display = "none";
+		  return (
+			console.log("🍌"),
+			(
+			  <div
+				id="locations"
+				style={{
+				  display: "none",
+				}}
+			  ></div>
+			)
+		  );
+		} else if (locations.style.display === "none") {
+		  this.setState({
+			hide: "off",
+		  });
+		  locations.style.display = "block";
+		  
+	}
+};
 
 	render() {
-		let videos = this.state.fetchdata.map((vid) => {
+	
 			return (
 				<div>
-					<div className="vid">
-						<div onClick={() => this.props.updateVideoObject(vid)}>
-							<Link to={`/Video/${vid.id.videoId}`}>
-								<img
-									className="thumbnail-container"
-									src={vid.snippet.thumbnails.high.url}
-									alt={vid.snippet.title}
-								/>
-							</Link>
+					<div className="ghi">
+						<div onClick={style=""}>
+							
 						</div>
 					</div>
-					<div className="title">{vid.snippet.title}</div>
+					<h1>List of Locations</h1>
+					<button onClick={this.hide}>Show Locations</button>
+					<div className="locations">{this.state.searchValue}</div>
 				</div>
 			);
-		});
-		return (
-			<div>
-				<div id="form-container">
-					<form onSubmit={this.fetchGhibli}>
-						<span>
-							<input
-								className="search"
-								onInput={this.setSearch}
-								placeholder="Search..."
-								type="text"
-								id="search"
-								name="search"
-								value={this.state.searchValue}
-								autoComplete="off"
-							/>
-						</span>
-						<span>
-							<button className="submit" type="submit">
-								Search
-							</button>
-						</span>
-					</form>
-				</div>
-				<div
-					id="no-results"
-					style={{ display: this.state.toggle ? "block" : "none" }}
-				>
-					{"No Search Results Yet! Please submit a search above!"}
-				</div>
-				<div id="display-container" className="video-container">
-					<div id="video">{videos}</div>
-				</div>
-			</div>
-		);
 	}
 }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Home.css";
-import { Link } from "react-router-dom";
 
 export default class People extends Component {
 	constructor() {
@@ -43,13 +42,7 @@ export default class People extends Component {
 				<div>
 					<div className="ghi">
 						<div onClick={() => this.props.updateVideoObject(ghi)}>
-							<Link to={`/Video/${ghi.id}`}>
-								<img
-									className="thumbnail-container"
-									src={ghi.snippet.thumbnails.high.url}
-									alt={ghi.snippet.title}
-								/>
-							</Link>
+							
 						</div>
 					</div>
 					<div className="title">{ghi.snippet.title}</div>

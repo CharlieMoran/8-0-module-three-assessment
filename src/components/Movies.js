@@ -3,6 +3,9 @@ import React, {Component} from "react";
 export default class Movies extends Component {
 	constructor(){
 		super();
+		this.state= {
+			
+		}
 	}
 	render(){
 		let moobies = this.props.state.film;
