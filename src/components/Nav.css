@@ -1,0 +1,39 @@
+* {
+	background-color: #282828;
+}
+nav {
+	top: 0;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	background-color: #282828;
+	width: 100%;
+	border-bottom: 1px solid grey;
+}
+.logo {
+	display: flex;
+	border-radius: 10px;
+	font-size: 22px;
+	padding: 16px 20px;
+	background-color: #282828;
+	font-family: 800;
+}
+#leAnchor {
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.logo img {
+	width: 30px;
+}
+nav a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	padding: 20px 15px;
+	background-color: #282828;
+	font-weight: 400;
+	transition: 0.3s ease-in;
+}
+nav a:hover {
+	color: #ff0000;
+}
