@@ -1,7 +1,4 @@
 import React, {Component} from "react";
-import ReactDom from "react-dom";
-import {Route, withRouter} from "react-router-dom";
-import Movies from "./Movies";
 
 class MovieSearch extends Component{
 	constructor(){
@@ -28,11 +25,9 @@ componentDidMount() {
 
 render() {
 		return (
-
 			<title state={this.state} />
 		)
 	}
 }
 
 export default MovieSearch;
-ReactDOM.render(<MovieSearch />, document.getElementById('react-search'));

@@ -1,23 +1,73 @@
 import React, {Component} from "react";
-import {withRouter} from 'react-router';
+import {withRouter} from "react-router";
+import film from "./MovieSearch";
 
 class Movies extends Component {
 	constructor(){
 		super();
 		this.state= {
+			films: film,
+			moobies: "",
+			movies: {},
+			output: "",
 		}
 	}
+	componentDidMount() {
+		let moobie = [];
+		fetch(`curl https://ghibliapi.herokuapp.com/films/`)
+		.then(response => response.json())
+		.then(films => {
+			this.setState({ movies: films});
+			films.forEach((movie) => {
+			let firstMovies = this.state.movies;
+			firstMovies[movie.title] = movie;
+			this.setState({
+				moobies: [...this.state.moobies,
+				<option value={moobie.title}>{moobie.title}</option>,
+			],
+				movies: firstMovies,
+			});
+		})
+			
+		});
+}
+
+selection = (e) => {
+	if (e.target.value === "") {
+		this.setState({output: ""});
+	} else {
+		this.setState({
+			output: (
+			<div className="center">
+				<h1>Title: {this.state.movies[e.target.value].title}</h1>
+				<p>
+					Release Date: {this.state.movies[e.target.value].release_date}
+				</p>
+				<p>
+					Description: {this.state.movies[e.target.value].description}
+				</p>
+			</div>)
+		})
+	}
+}
+
+
+
 	render(){
-		let moobies = this.props.state.film;
-		let optionItems = moobies.map((ghi) =>
-		<option key={ghi.title}>{ghi.title}</option>
-		);
+		
 		return (
 			<div>
+				<div className="prompt-text" id="prompt-text">
 				<h1 className="prompt-text" id="prompt-text">Select a Movie</h1>
-				<select>
-					{optionItems}
+				</div>
+				<div className="center" id="center">
+				<select className="center" id="center" onChange={this.selection}>
+					<option value=""></option>
+					{this.state.moobies}
 				</select>
+				{this.state.output}
+				</div>
+				
 			</div>
 		)
 	}

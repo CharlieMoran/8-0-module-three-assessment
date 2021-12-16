@@ -10,7 +10,7 @@ export default class Nav extends Component {
 			<nav>
 				<div id="logo-container">
 					<BrowserRouter>
-					<Link className="logo" exact to="/">
+					<Link className="logo" to="/">
 						<img src={logo} alt="logo" />
 					</Link>
 					</BrowserRouter>
