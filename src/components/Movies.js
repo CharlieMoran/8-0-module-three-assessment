@@ -7,13 +7,12 @@ class Movies extends Component {
 		super();
 		this.state= {
 			films: film,
-			moobies: "",
+			moobies: [],
 			movies: {},
 			output: "",
 		}
 	}
 	componentDidMount() {
-		let moobie = [];
 		fetch(`curl https://ghibliapi.herokuapp.com/films/`)
 		.then(response => response.json())
 		.then(films => {
@@ -23,7 +22,7 @@ class Movies extends Component {
 			firstMovies[movie.title] = movie;
 			this.setState({
 				moobies: [...this.state.moobies,
-				<option value={moobie.title}>{moobie.title}</option>,
+				<option value={movie.title}>{movie.title}</option>,
 			],
 				movies: firstMovies,
 			});
@@ -51,10 +50,7 @@ selection = (e) => {
 	}
 }
 
-
-
-	render(){
-		
+render(){
 		return (
 			<div>
 				<div className="prompt-text" id="prompt-text">
