@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import Movies from "./Movies";
+import ReactDom from "react-dom";
+import {Route, withRouter} from "react-router-dom";
 
 class MovieSearch extends Component{
 	constructor(){
@@ -7,7 +10,8 @@ class MovieSearch extends Component{
 			films: "",
 		};
 	}
-	componentDidMount() {
+
+componentDidMount() {
 		let film = [];
 		fetch(`curl https://ghibliapi.herokuapp.com/films/`)
 		.then(response => {
@@ -20,8 +24,9 @@ class MovieSearch extends Component{
 				films: film,
 			});
 		});
-	}
-	render() {
+}
+
+render() {
 		return (
 			<title state={this.state} />
 		)
@@ -29,3 +34,4 @@ class MovieSearch extends Component{
 }
 
 export default MovieSearch;
+ReactDOM.render(<MovieSearch />, document.getElementById('react-search'));

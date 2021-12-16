@@ -17,9 +17,9 @@ export default class Nav extends Component {
 				</div>
 				<div id="leAnchor">
 					<BrowserRouter>
-					<Link to="/About">Movies</Link>
+					<Link to="/Movies">Movies</Link>
 					<Link to="/People">People</Link>
-					<Link to="/People">Locations</Link>
+					<Link to="/Locations">Locations</Link>
 					</BrowserRouter>
 				</div>
 			</nav>

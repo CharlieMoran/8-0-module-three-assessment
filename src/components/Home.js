@@ -11,7 +11,8 @@ export default class Home extends Component {
 render() {
 	return(
 	<div>	
-		<h1>Welcome To GhibliApp</h1>
+		<div></div>
+		<h1 className="welcome" id="welcome">Welcome To GhibliApp</h1>
 	</div>)
 }
 }

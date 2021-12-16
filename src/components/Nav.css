@@ -1,21 +1,20 @@
 * {
-	background-color: #282828;
+	background-color: #e6e6fa;
 }
 nav {
 	top: 0;
 	position: fixed;
 	display: flex;
-	justify-content: space-between;
-	background-color: #282828;
+	background-color: #7fffd3;
 	width: 100%;
 	border-bottom: 1px solid grey;
+	text-align: center;
 }
 .logo {
 	display: flex;
-	border-radius: 10px;
 	font-size: 22px;
-	padding: 16px 20px;
-	background-color: #282828;
+	padding: 14px 20px;
+	background-color: #7fffd3;
 	font-family: 800;
 }
 #leAnchor {
@@ -27,10 +26,11 @@ nav {
 	width: 30px;
 }
 nav a {
-	color: rgb(255, 255, 255);
-	text-decoration: none;
+	color: blue;
+	text-decoration: underline;
+	text-align: center;
 	padding: 20px 15px;
-	background-color: #282828;
+	background-color: #7fffd3;
 	font-weight: 400;
 	transition: 0.3s ease-in;
 }

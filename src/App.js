@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import { Switch, Route } from "react-router-dom";
 import Movies from "./components/Movies";
 import People from "./components/People";
+import Locations from "./components/Locations";
 import { Component } from "react";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -31,7 +32,7 @@ class App extends Component {
         </Route>
       </Switch>
       <Route path="/Locations">
-          <People />
+          <Locations />
         </Route>
         </BrowserRouter>
     </div>

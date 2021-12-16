@@ -37,6 +37,7 @@ export default class Locations extends Component {
 	};
 	
 	hide = () => {
+		let locations = document.getElementById("locations");
 		if (locations.style.display === "block") {
 		  this.setState({
 			hide: "on",
@@ -66,14 +67,16 @@ export default class Locations extends Component {
 	
 			return (
 				<div>
-					<div className="ghi">
-						<div onClick={style=""}>
-							
-						</div>
+					<h1 className="list" id="list">List of Locations</h1>
+					<div className="loc-btn" id="loc-btn">
+						<button onClick={this.hide} className="loc-btn" id="loc-btn">Show Locations</button>
 					</div>
-					<h1>List of Locations</h1>
-					<button onClick={this.hide}>Show Locations</button>
-					<div className="locations">{this.state.searchValue}</div>
+					
+					<div className="locations" id="locations" style={{
+           				 display: "none",
+        					  }}>
+								  {this.state.searchValue}
+					</div>
 				</div>
 			);
 	}

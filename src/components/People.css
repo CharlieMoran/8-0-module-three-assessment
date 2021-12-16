@@ -1,0 +1,14 @@
+.people-container {
+    justify-content: center;
+    text-align: center;
+}
+
+.search {
+    justify-content: center;
+    text-align: center;
+}
+
+.people-text{
+    padding-top: 50px;
+    text-align: center;
+}
