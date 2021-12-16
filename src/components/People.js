@@ -43,7 +43,6 @@ class People extends Component {
 				<div>
 					<div className="ghi">
 						<div onClick={() => this.props.updateGhibli(ghi)}>
-							
 						</div>
 					</div>
 					<div className="title">{ghi.snippet.title}</div>

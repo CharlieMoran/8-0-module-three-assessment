@@ -10,17 +10,17 @@ import Locations from "./components/Locations";
 class App extends Component {
   render(){
   return (
+   <BrowserRouter>
     <div>
       <Nav />
-      <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/Movies" component={Movies} />
         <Route path="/People" component={People} />
         <Route path="/Locations" component={Locations} />
       </Switch>
-        </BrowserRouter>
     </div>
+   </BrowserRouter>
   );
   }
 }
