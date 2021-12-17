@@ -2,7 +2,11 @@
     justify-content: center;
     text-align: center;
 }
-
+.bg {
+    background-color: #87ceeb;
+    width: auto;
+    height: auto;
+}
 .center {
     justify-content: center;
     text-align: center;

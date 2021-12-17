@@ -1,13 +1,10 @@
-* {
-    background-color: #87ceeb;
-}
-
 .list {
     padding-top: 50px;
     text-align: center;
 }
 
 .center {
+    background-color: #87ceeb;
     justify-content: center;
     text-align: center;
 }

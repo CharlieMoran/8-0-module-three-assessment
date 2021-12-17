@@ -50,7 +50,7 @@ class People extends Component {
 			);
 		});
 		return (
-			<div>
+			<div className="bg">
 				<h1 className="people-text" id="people-text">Search for a Person</h1>
 				<div className="center" id="center">
 					<form onSubmit={this.fetchGhibli} className="search" id="search">
