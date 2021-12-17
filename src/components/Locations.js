@@ -5,11 +5,10 @@ import "./Locations.css";
 class Locations extends Component {
 	constructor() {
 		super();
-
 		this.state = {
-			searchValue: "",
+
 			fetchdata: [],
-			toggle: true,
+			toggle: false,
 		};
 	}
 
@@ -44,20 +43,14 @@ class Locations extends Component {
 	}
 
 	render() {
-	
-			return (
-				<div>
-					<h1 className="list" id="list">List of Locations</h1>
-					<div className="loc-btn" id="loc-btn">
-						<button onClick={this.hide} className="loc-btn" id="loc-btn">{this.state.toggle ? "Hide Locations" : "Show Locations"}</button>
-					</div>
-					
-					<div className="locations" id="locations" style={{
-           				 display: "none",
-        					  }}>
-								  {this.state.toggle ? <ul>{this.state.fetchdata}</ul>: ""}
-					</div>
-				</div>
+		return (
+				<div className="center">
+				<h1 className="list" id="list">List of Locations</h1>
+				<button onClick={this.hide} className="loc-btn" id="loc-btn">
+				{this.state.toggle ? "Hide Locations" : "Show Locations"}
+				</button>
+				{this.state.toggle ? <ul>{this.state.fetchdata}</ul>: ""}
+			</div>
 			);
 	}
 }
