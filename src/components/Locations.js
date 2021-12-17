@@ -45,7 +45,7 @@ class Locations extends Component {
 	render() {
 		return (
 				<div className="center">
-				<h1 className="list" id="list">List of Locations</h1>
+				<h1 className="list">List of Locations</h1>
 				<button onClick={this.hide} className="loc-btn" id="loc-btn">
 				{this.state.toggle ? "Hide Locations" : "Show Locations"}
 				</button>

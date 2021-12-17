@@ -51,8 +51,8 @@ class People extends Component {
 		});
 		return (
 			<div className="bg">
-				<h1 className="people-text" id="people-text">Search for a Person</h1>
-				<div className="center" id="center">
+				<h1 className="people-text">Search for a Person</h1>
+				<div className="center">
 					<form onSubmit={this.fetchGhibli} className="search" id="search">
 						<span className="search" id="search">
 							<input
@@ -67,7 +67,7 @@ class People extends Component {
 							/>
 						</span>
 						<span>
-							<button className="submit" type="submit">
+							<button className="submit">
 								Submit
 							</button>
 						</span>
@@ -79,7 +79,7 @@ class People extends Component {
 				>
 					{"Not Found"}
 				</div>
-				<div id="display-container" className="ghibli-container">
+				<div className="ghibli-container">
 					<div id="ghibli">{ghibli}</div>
 				</div>
 			</div>

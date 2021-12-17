@@ -51,14 +51,16 @@ selection = (e) => {
 }
 
 render(){
-		return (
-				<div className="center" id="center">
-				<h1 className="prompt-text" id="prompt-text">Select a Movie</h1>
-				<select className="center" id="center" onChange={this.selection}>
-					<option value=""></option>
-					{this.state.moobies}
-				</select>
+	return (
+			<div className="bg" id="bg">
+				<div className="center">
+			<h1 className="prompt-text">Select a Movie</h1>
+			<select className="center" onChange={this.selection}>
+				<option value=""></option>
+				{this.state.moobies}
+			</select>
 				{this.state.output}
+			</div>
 			</div>
 		)
 	}
