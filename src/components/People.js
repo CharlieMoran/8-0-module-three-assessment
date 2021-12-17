@@ -30,7 +30,7 @@ class People extends Component {
 
 	submit = (e) => {
 		e.preventDefault();
-		let search = e.target.searchInput.value.toLowerCase();
+		let search = e.target.input.value.toLowerCase();
 		if (this.state.people[search]){
 			this.setState({
 				output: (
