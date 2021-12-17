@@ -9,13 +9,13 @@ export default class Nav extends Component {
 			<nav>
 				<div id="logo-container">
 					<Link className="logo" to="/">
-						<img src={logo} alt="logo" />
+						<img src={logo} alt="logo" className="photo"/>
 					</Link>
 				</div>
 				<div id="leAnchor">
-					<Link to="/Movies">Movies</Link>
-					<Link to="/People">People</Link>
-					<Link to="/Locations">Locations</Link>
+					<Link to="/Movies"><strong>Movies</strong></Link>
+					<Link to="/People"><strong>People</strong></Link>
+					<Link to="/Locations"><strong>Locations</strong></Link>
 				</div>
 			</nav>
 		);

@@ -50,7 +50,7 @@ render() {
 	return (
 		<div className="people">
 			<div>
-			<h1>Search for a Person</h1>
+			<h1 className="people-text">Search for a Person</h1>
 			<form className="search" placeholder="Find Your Person" onSubmit={this.submit}>
 			<input type="text" name="input" />
 			<button type="submit">Submit</button>
