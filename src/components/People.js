@@ -14,9 +14,7 @@ class People extends Component {
 	}
 
  componentDidMount() {
-		fetch(
-			`curl https://ghibliapi.herokuapp.com/people/`
-		)
+		fetch("https://ghibliapi.herokuapp.com/people/")
 			.then((res) => res.json())
 			.then((data) => {
 				this.setState({ fetchdata: data, });
@@ -50,7 +48,7 @@ class People extends Component {
 
 render() {
 	return (
-		<div className="people">
+		<div className="bg">
 		<h1>Search for a Person</h1>
 		<form className="search" placeholder="Find Your Person" onSubmit={this.submit}>
 		<input type="text" name="input" />

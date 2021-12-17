@@ -19,7 +19,7 @@ class Locations extends Component {
 	};
 
 	componentDidMount() {
-		fetch(`curl https://ghibliapi.herokuapp.com/locations`)
+		fetch("https://ghibliapi.herokuapp.com/locations")
 			.then((res) =>  res.json())
 			.then((data) => {
 				data.forEach((location) => {

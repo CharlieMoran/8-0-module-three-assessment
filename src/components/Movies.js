@@ -13,7 +13,7 @@ class Movies extends Component {
 		}
 	}
 	componentDidMount() {
-		fetch(`curl https://ghibliapi.herokuapp.com/films/`)
+		fetch("https://ghibliapi.herokuapp.com/films/")
 		.then(response => response.json())
 		.then(films => {
 			this.setState({ movies: films});
@@ -52,7 +52,7 @@ selection = (e) => {
 
 render(){
 	return (
-			<div className="bg" id="bg">
+			<div className="bg">
 				<div className="center">
 			<h1 className="prompt-text">Select a Movie</h1>
 			<select className="center" onChange={this.selection}>
