@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router";
 import film from "./MovieSearch";
+import "./Movies.css";
 
 class Movies extends Component {
 	constructor(){
@@ -52,7 +53,7 @@ selection = (e) => {
 
 render() {
 	return (
-		<div className="moviebg">
+		<div className="movies">
 			<div className="center">
 			<h1 className="prompt-text">Select a Movie</h1>
 			<select className="center" onChange={this.selection}>

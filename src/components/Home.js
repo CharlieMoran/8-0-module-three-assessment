@@ -7,7 +7,7 @@ render() {
 	return(
 		<div className="home">
 			<div>
-			<h1 className="welcome" id="welcome">Welcome To GhibliApp</h1>
+			<h1 className="welcome">Welcome To GhibliApp</h1>
 			</div>
 		</div>
 		)
