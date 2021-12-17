@@ -7,83 +7,58 @@ class People extends Component {
 		super();
 
 		this.state = {
-			searchValue: "",
 			fetchdata: [],
-			toggle: true,
+			people: {},
+			output: "",
 		};
 	}
 
-	setSearch = (e) => {
-		this.setState({
-			searchValue: e.target.value,
-		});
-	};
-
-	fetchGhibli = (e) => {
-		e.preventDefault();
-
+ componentDidMount() {
 		fetch(
 			`curl https://ghibliapi.herokuapp.com/people/`
 		)
-			.then((res) => {
-				return res.json();
-			})
+			.then((res) => res.json())
 			.then((data) => {
+				this.setState({ fetchdata: data, });
+				data.forEach((person) => {
+					let firstPeople = this.state.people;
+					firstPeople[person.name.toLowerCase()] = person;
 				this.setState({
-					fetchdata: data.items,
-					searchValue: "",
-					toggle: false,
-				});
-			});
+					people: firstPeople,
+				})
+			})
+		});
 	};
 
-	render() {
-		let ghibli = this.state.fetchdata.map((ghi) => {
-			return (
-				<div>
-					<div className="ghi">
-						<div onClick={() => this.props.updateGhibli(ghi)}>
-						</div>
+	submit = (e) => {
+		e.preventDefault();
+		let search = e.target.searchInput.value.toLowerCase();
+		if (this.state.people[search]){
+			this.setState({
+				output: (
+					<div className="output">
+						<p>Name: {this.state.people[search].name}</p>
+						<p>Age: {this.state.people[search].age}</p>
+						<p>Gender: {this.state.people[search].gender}</p>
 					</div>
-					<div className="title">{ghi.snippet.title}</div>
-				</div>
-			);
-		});
-		return (
-			<div className="bg">
-				<h1 className="people-text">Search for a Person</h1>
-				<div className="center">
-					<form onSubmit={this.fetchGhibli} className="search" id="search">
-						<span className="search" id="search">
-							<input
-								className="search"
-								onInput={this.setSearch}
-								placeholder="Find Your Person"
-								type="text"
-								id="search"
-								name="search"
-								value={this.state.searchValue}
-								autoComplete="off"
-							/>
-						</span>
-						<span>
-							<button className="submit">
-								Submit
-							</button>
-						</span>
-					</form>
-				</div>
-				<div
-					id="no-results"
-					style={{ display: this.state.toggle ? "block" : "none" }}
-				>
-					{"Not Found"}
-				</div>
-				<div className="ghibli-container">
-					<div id="ghibli">{ghibli}</div>
-				</div>
-			</div>
-		);
+				),
+			});
+		} else {
+			this.setState({ output: <p>Not Found</p>})
+		}
+	}
+
+render() {
+	return (
+		<div className="people">
+		<h1>Search for a Person</h1>
+		<form className="search" placeholder="Find Your Person" onSubmit={this.submit}>
+		<input type="text" name="input" />
+		<button type="submit">Submit</button>
+		</form>
+		{this.state.output}
+		</div>
+		)
 	}
 }
 
