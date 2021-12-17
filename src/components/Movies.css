@@ -4,11 +4,18 @@
 }
 
 .prompt-text{
-    padding-top: 200px;
+    padding-top: 100px;
     text-align: center;
+    font-size: 70px;
 }
 
 .center {
     justify-content: center;
     text-align: center;
+}
+
+p {
+    font-size: 22px;
+    padding-left: 5%;
+    padding-right: 5%;
 }

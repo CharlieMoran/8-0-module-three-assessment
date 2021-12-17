@@ -55,7 +55,10 @@ render() {
 			<input type="text" name="input" />
 			<button type="submit">Submit</button>
 			</form>
+			<div id="output">
 			{this.state.output}
+			</div>
+			
 			</div>
 		</div>
 		)

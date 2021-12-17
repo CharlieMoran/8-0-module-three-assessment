@@ -12,10 +12,15 @@ export default class Nav extends Component {
 						<img src={logo} alt="logo" className="photo"/>
 					</Link>
 				</div>
-				<div id="leAnchor">
-					<Link to="/Movies"><strong>Movies</strong></Link>
-					<Link to="/People"><strong>People</strong></Link>
-					<Link to="/Locations"><strong>Locations</strong></Link>
+				<div id="leMovies">
+					<Link to="/Movies">Movies</Link>
+					<div id="lePeople">
+					<Link to="/People">People</Link>
+					</div>
+					<div id="leLocations">
+					<Link to="/Locations">Locations</Link>
+					</div>
+					
 				</div>
 			</nav>
 		);
