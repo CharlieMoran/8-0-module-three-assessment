@@ -21,48 +21,32 @@ class Locations extends Component {
 
 	fetchGhibli = (e) => {
 		e.preventDefault();
-
 		fetch(
 			`curl https://ghibliapi.herokuapp.com/locations/`
 		)
-			.then((res) => {
-				return res.json();
+			.then((res) => { res.json();
 			})
 			.then((data) => {
-				this.setState({
-					fetchdata: data.locations,
-					searchValue: "",
-					toggle: false,
-				});
+				data.forEach((location) => {
+					this.setState({
+						fetchdata: [...this.state.locations,
+						<li>
+							<p>Name: {location.name}</p>
+							<p>Climate: {location.climate}</p>
+							<p>Terrain: {location.terrain}</p>
+						</li>
+						],
+						searchValue: "",
+						toggle: false,
+					});
+				})
+				
 			});
 	};
-	
+
 	hide = () => {
-		let locations = document.getElementById("locations");
-		if (locations.style.display === "block") {
-		  this.setState({
-			hide: "on",
-		  });
-		  locations.style.display = "none";
-		  return (
-			console.log("🐶"),
-			(
-			  <div
-				id="locations"
-				style={{
-				  display: "none",
-				}}
-			  ></div>
-			)
-		  );
-		} else if (locations.style.display === "none") {
-		  this.setState({
-			hide: "off",
-		  });
-		  locations.style.display = "block";
-		  
+		this.setState({toggle: !this.state.toggle})
 	}
-};
 
 	render() {
 	
@@ -70,13 +54,13 @@ class Locations extends Component {
 				<div>
 					<h1 className="list" id="list">List of Locations</h1>
 					<div className="loc-btn" id="loc-btn">
-						<button onClick={this.hide} className="loc-btn" id="loc-btn">Show Locations</button>
+						<button onClick={this.hide} className="loc-btn" id="loc-btn">{this.state.toggle ? "Hide Locations" : "Show Locations"}</button>
 					</div>
 					
 					<div className="locations" id="locations" style={{
            				 display: "none",
         					  }}>
-								  {this.state.searchValue}
+								  {this.state.toggle ? <ul>{this.state.fetchdata}</ul>: ""}
 					</div>
 				</div>
 			);
