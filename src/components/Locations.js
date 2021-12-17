@@ -26,7 +26,7 @@ class Locations extends Component {
 					this.setState({
 						fetchdata: [
 						...this.state.fetchdata,
-						<li>
+						<li key={location.name}>
 							<p>Name: {location.name}</p>
 							<p>Climate: {location.climate}</p>
 							<p>Terrain: {location.terrain}</p>
