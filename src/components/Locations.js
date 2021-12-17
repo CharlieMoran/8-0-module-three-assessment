@@ -19,25 +19,20 @@ class Locations extends Component {
 		});
 	};
 
-	fetchGhibli = (e) => {
-		e.preventDefault();
-		fetch(
-			`curl https://ghibliapi.herokuapp.com/locations/`
-		)
-			.then((res) => { res.json();
-			})
+	componentDidMount() {
+		fetch(`curl https://ghibliapi.herokuapp.com/locations`)
+			.then((res) =>  res.json())
 			.then((data) => {
 				data.forEach((location) => {
 					this.setState({
-						fetchdata: [...this.state.locations,
+						fetchdata: [
+						...this.state.fetchdata,
 						<li>
 							<p>Name: {location.name}</p>
 							<p>Climate: {location.climate}</p>
 							<p>Terrain: {location.terrain}</p>
-						</li>
+						</li>,
 						],
-						searchValue: "",
-						toggle: false,
 					});
 				})
 				
