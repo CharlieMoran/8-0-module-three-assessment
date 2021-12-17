@@ -44,13 +44,16 @@ class Locations extends Component {
 
 	render() {
 		return (
+			<div className="bg">
 				<div className="center">
 				<h1 className="list">List of Locations</h1>
 				<button onClick={this.hide} className="loc-btn" id="loc-btn">
 				{this.state.toggle ? "Hide Locations" : "Show Locations"}
 				</button>
 				{this.state.toggle ? <ul>{this.state.fetchdata}</ul>: ""}
+				</div>
 			</div>
+				
 			);
 	}
 }

@@ -48,13 +48,15 @@ class People extends Component {
 
 render() {
 	return (
-		<div className="bg">
-		<h1>Search for a Person</h1>
-		<form className="search" placeholder="Find Your Person" onSubmit={this.submit}>
-		<input type="text" name="input" />
-		<button type="submit">Submit</button>
-		</form>
-		{this.state.output}
+		<div className="people">
+			<div>
+			<h1>Search for a Person</h1>
+			<form className="search" placeholder="Find Your Person" onSubmit={this.submit}>
+			<input type="text" name="input" />
+			<button type="submit">Submit</button>
+			</form>
+			{this.state.output}
+			</div>
 		</div>
 		)
 	}

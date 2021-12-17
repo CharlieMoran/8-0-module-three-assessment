@@ -8,6 +8,7 @@
     text-align: center;
 }
 
-.bg {
-    background-color: #87ceeb;
+.moviebg {
+    background-color: #e6e6fa;
+    min-height: 100vh;
 }

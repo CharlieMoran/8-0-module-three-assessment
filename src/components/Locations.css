@@ -2,7 +2,10 @@
     padding-top: 50px;
     text-align: center;
 }
-
+.bg {
+    background-color: #87ceeb;
+    min-height: 100vh;
+}
 .center {
     justify-content: center;
     text-align: center;

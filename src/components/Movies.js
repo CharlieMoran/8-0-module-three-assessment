@@ -50,18 +50,18 @@ selection = (e) => {
 	}
 }
 
-render(){
+render() {
 	return (
-			<div className="bg">
-				<div className="center">
+		<div className="moviebg">
+			<div className="center">
 			<h1 className="prompt-text">Select a Movie</h1>
 			<select className="center" onChange={this.selection}>
-				<option value=""></option>
-				{this.state.moobies}
+			<option value=""></option>
+			{this.state.moobies}
 			</select>
-				{this.state.output}
+			{this.state.output}
 			</div>
-			</div>
+		</div>
 		)
 	}
 }
